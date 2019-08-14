@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+-->
+<layout>
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="Bricks_Gifter/Frontend_Checkout_GiftForm" name="bricks.gifter.checkout.gift-form" template="Bricks/Gifter/checkout/gift-form.phtml" />
+        </reference>
+    </checkout_onepage_review>
+</layout>

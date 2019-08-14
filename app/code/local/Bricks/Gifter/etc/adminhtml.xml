@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+-->
+<config>
+    <menu>
+        <promo>
+            <children>
+                <bricks_gifter translate="title">
+                    <title>Gifter</title>
+                    <action>adminhtml/promo_gifter/</action>
+                    <children>
+                        <assign_coupons translate="title">
+                            <title>Assign Coupons (Force)</title>
+                            <action>adminhtml/promo_gifter/assignCoupons</action>
+                        </assign_coupons>
+                        <send_emails translate="title">
+                            <title>Send Emails (Force)</title>
+                            <action>adminhtml/promo_gifter/sendEmails</action>
+                        </send_emails>
+                    </children>
+                </bricks_gifter>
+            </children>
+        </promo>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <promo>
+                        <children>
+                            <bricks_gifter translate="title">
+                                <title>Gifter</title>
+                            </bricks_gifter>
+                        </children>
+                    </promo>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <checkout>
+                                        <children>
+                                            <bricks_gifter translate="title">
+                                                <title>Bricks Gifter</title>
+                                            </bricks_gifter>
+                                        </children>
+                                    </checkout>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

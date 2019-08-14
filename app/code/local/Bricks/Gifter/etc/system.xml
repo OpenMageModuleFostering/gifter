@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+-->
+<config>
+    <sections>
+        <checkout>
+            <groups>
+                <bricks_gifter translate="label">
+                    <label>Gifter</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <config_path>bricks/gifter/enabled</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1000</sort_order>
+                        </enabled>
+                        <!-- Add Selector for Static Block to display on checkout -->
+                        <coupon_rule translate="label">
+                            <label>Coupon Rule</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Bricks_Gifter/Config_Source_CouponRules</source_model>
+                            <config_path>bricks/gifter/coupon_rule</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10000</sort_order>
+                        </coupon_rule>
+                        <coupon_code_length>
+                            <label>Generated Coupon Length</label>
+                            <comment>Excluding prefix, suffix and separators.</comment>
+                            <frontend_type>text</frontend_type>
+                            <config_path>bricks/gifter/coupon_code_length</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10100</sort_order>
+                        </coupon_code_length>
+                        <coupon_code_prefix>
+                            <label>Generated Coupon Prefix</label>
+                            <frontend_type>text</frontend_type>
+                            <config_path>bricks/gifter/coupon_code_prefix</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10300</sort_order>
+                        </coupon_code_prefix>
+                        <min_checkout_amount>
+                            <label>Min. Checkout Amount</label>
+                            <comment>Min. amount for checkout that allows the customer to include a friend's email address to "send a gift to a friend"</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10100</sort_order>
+                        </min_checkout_amount>
+                        <coupon_code_suffix>
+                            <label>Generated Coupon Suffix</label>
+                            <frontend_type>text</frontend_type>
+                            <config_path>bricks/gifter/coupon_code_suffix</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10400</sort_order>
+                        </coupon_code_suffix>
+                        <coupon_code_dash_interval>
+                            <label>Generated Coupon Dash Interval</label>
+                            <comment>If empty no separation.</comment>
+                            <frontend_type>text</frontend_type>
+                            <config_path>bricks/gifter/coupon_code_dash_interval</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>10500</sort_order>
+                        </coupon_code_dash_interval>
+                        <email_sender translate="label">
+                            <label>Email Sender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <config_path>bricks/gifter/email_sender</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>15100</sort_order>
+                        </email_sender>
+                        <email_template translate="label">
+                            <label>Email Template</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <config_path>bricks/gifter/email_template</config_path>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <sort_order>15200</sort_order>
+                        </email_template>
+                    </fields>
+                </bricks_gifter>
+            </groups>
+        </checkout>
+    </sections>
+</config>

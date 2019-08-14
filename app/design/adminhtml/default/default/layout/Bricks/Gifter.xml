@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+-->
+<layout>
+    <adminhtml_promo_gifter_index>
+        <reference name="content">
+            <block type="Bricks_Gifter/Adminhtml_Gift" name="bricks.gifter.gift">
+                <block type="Bricks_Gifter/Adminhtml_Gift_Grid" name="bricks.gifter.gift.grid" as="grid">
+                    <action method="setUseAjax">
+                        <flag>1</flag>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_promo_gifter_index>
+    <adminhtml_promo_gifter_grid>
+        <remove name="root"/>
+        <block type="Bricks_Gifter/Adminhtml_Gift_Grid" name="bricks.gifter.gift.grid" output="toHtml"/>
+    </adminhtml_promo_gifter_grid>
+</layout>

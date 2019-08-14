@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+-->
+<config>
+    <modules>
+        <Bricks_Gifter>
+            <version>1.0.0</version>
+        </Bricks_Gifter>
+    </modules>
+    <global>
+        <helpers>
+            <Bricks_Gifter>
+                <class>Bricks_Gifter_Helper</class>
+            </Bricks_Gifter>
+        </helpers>
+        <blocks>
+            <Bricks_Gifter>
+                <class>Bricks_Gifter_Block</class>
+            </Bricks_Gifter>
+        </blocks>
+        <models>
+            <Bricks_Gifter>
+                <class>Bricks_Gifter_Model</class>
+                <resourceModel>Bricks_Gifter_Resource</resourceModel>
+            </Bricks_Gifter>
+            <Bricks_Gifter_Resource>
+                <class>Bricks_Gifter_Resource</class>
+                <entities>
+                    <Gift>
+                        <table>bricks_gifter_gift</table>
+                    </Gift>
+                </entities>
+            </Bricks_Gifter_Resource>
+        </models>
+        <resources>
+            <Bricks_Gifter>
+                <setup>
+                    <module>Bricks_Gifter</module>
+                </setup>
+            </Bricks_Gifter>
+        </resources>
+        <template>
+            <email>
+                <bricks_gifter_email_template translate="label">
+                    <label>Gift Coupon Code</label>
+                    <file>bricks/gifter/gift.html</file>
+                    <type>html</type>
+                </bricks_gifter_email_template>
+            </email>
+        </template>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <Bricks_Gifter>
+                    <file>Bricks/Gifter.xml</file>
+                </Bricks_Gifter>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Bricks_Gifter>
+                    <files>
+                        <default>Bricks/Gifter.csv</default>
+                    </files>
+                </Bricks_Gifter>
+            </modules>
+        </translate>
+        <events>
+            <sales_model_service_quote_submit_success>
+                <observers>
+                    <Bricks_Gifter>
+                        <class>Bricks_Gifter/Observer</class>
+                        <method>processGiftRecipient</method>
+                    </Bricks_Gifter>
+                </observers>
+            </sales_model_service_quote_submit_success>
+        </events>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <Bricks_Gifter>
+                    <file>Bricks/Gifter.xml</file>
+                </Bricks_Gifter>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Bricks_Gifter>
+                    <files>
+                        <default>Bricks_Gifter.csv</default>
+                    </files>
+                </Bricks_Gifter>
+            </modules>
+        </translate>
+        <events>
+            <salesrule_rule_get_coupon_types>
+                <observers>
+                    <Bricks_Gifter>
+                        <class>Bricks_Gifter/Observer</class>
+                        <method>activateAutoCoupons</method>
+                    </Bricks_Gifter>
+                </observers>
+            </salesrule_rule_get_coupon_types>
+        </events>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bricks_Gifter before="Mage_Adminhtml">Bricks_Gifter_Admin</Bricks_Gifter>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <crontab>
+        <jobs>
+            <Bricks_Gifter_assignCoupons>
+                <schedule>
+                    <config_path>Bricks/gifter/cron/assign_coupons</config_path>
+                </schedule>
+                <run>
+                    <model>Bricks_Gifter/Cron::assignCoupons</model>
+                </run>
+            </Bricks_Gifter_assignCoupons>
+            <Bricks_Gifter_sendEmails>
+                <schedule>
+                    <config_path>bricks/gifter/cron/send_emails</config_path>
+                </schedule>
+                <run>
+                    <model>Bricks_Gifter/Cron::sendEmails</model>
+                </run>
+            </Bricks_Gifter_sendEmails>
+        </jobs>
+    </crontab>
+    <default>
+        <bricks>
+            <gifter>
+                <enabled>0</enabled>
+                <coupon_batch>100</coupon_batch>
+                <email_batch>100</email_batch>
+                <cron>
+                    <assign_coupons>*/15 * * * *</assign_coupons>
+                    <send_emails>*/15 * * * *</send_emails>
+                </cron>
+            </gifter>
+        </bricks>
+    </default>
+</config>

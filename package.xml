@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Gifter</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSL-3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Gifter</summary>
+    <description>Gifter</description>
+    <notes>Gifter</notes>
+    <authors><author><name>adam</name><user>adam</user><email>adam@bricksandmortarweb.com</email></author></authors>
+    <date>2016-02-08</date>
+    <time>14:16:05</time>
+    <contents><target name="magelocal"><dir name="Bricks"><dir name="Gifter"><dir name="Block"><dir name="Adminhtml"><dir name="Gift"><file name="Grid.php" hash="cd77314b07f51b1acdcbe4ce8997fe78"/></dir><file name="Gift.php" hash="8c2c222bf1ae921d61eac62108c5f725"/></dir><dir name="Frontend"><dir name="Checkout"><file name="GiftForm.php" hash="54acc51fe0b072c96dca27ec234340eb"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="a0e452c5d23ae7cad623c52d15a6118d"/></dir><dir name="Model"><dir name="Config"><dir name="Source"><file name="CouponFormats.php" hash="7438cfcd8fbf2062e62495f59967a7bf"/><file name="CouponRules.php" hash="135b84acf613328796d1c2eae0543734"/></dir></dir><file name="CouponGenerator.php" hash="ca121b7f205cb05e03ecfdf229c431b4"/><file name="Cron.php" hash="6dd51a4f15ca62382c978e143c9a869d"/><file name="Gift.php" hash="f1569c386e730dd174417066c419423f"/><file name="Observer.php" hash="772d3fb152c6829eff20b5acb09c0736"/></dir><dir name="Resource"><dir name="Gift"><file name="Collection.php" hash="4404e2f7021b6683d0ceab2b9e687af6"/></dir><file name="Gift.php" hash="6ab2c2e31f60d3e8be45545cf4e2fabd"/></dir><dir name="controllers"><dir name="Admin"><dir name="Promo"><file name="GifterController.php" hash="34cf174e2d9241d7eb3c03de360ff03c"/></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="cf2e63b3e3f403c91b52393f5fea2b14"/><file name="config.xml" hash="b16782e6ea0554796bd8e9844e361297"/><file name="system.xml" hash="7d27a8bbcc1ce7827327635fbb479259"/></dir><dir name="sql"><dir name="Bricks_Gifter"><file name="install-1.0.0.php" hash="6272b303f9e635fb3a53ed9b378d2a72"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Bricks_Gifter.xml" hash="7c4851a4ad353bbaf0f3fe0cecf0223d"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="Bricks"><file name="Gifter.xml" hash="2a3abc47e56bba863bd5712d4bf4abfe"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="Bricks"><dir name="Gifter"><dir name="checkout"><file name="gift-form.phtml" hash="7e4c513fa0c0b14c77570d79b425bd5d"/></dir></dir></dir></dir><dir name="layout"><dir name="Bricks"><file name="Gifter.xml" hash="d17963e57250b04e8442d043352f9d15"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_US"><dir name="template"><dir name="email"><dir name="bricks"><dir name="gifter"><file name="gift.html" hash="1ea15790892174ee8a48fa67e1c053e8"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>2.0.0.0</min><max>6.0.0.0</max></php></required></dependencies>
+</package>

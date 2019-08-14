@@ -1,0 +1,61 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Mage
+ * @package    Bricks_Gifter
+ * @license    GPL
+ * @author     Adam <adam@bricksandmortarweb.com>
+ */
+
+/** @var $this bricks_Gifter_Block_Frontend_Checkout_GiftForm */
+$subtotal = Mage::helper('checkout/cart')->getQuote()->getSubtotal();
+$min_amount_check = Mage::getStoreConfig('checkout/bricks_gifter/min_checkout_amount');
+// exit;
+if($subtotal>$min_amount_check)
+{
+?>
+<div class="checkout-agreements">
+    <?php echo $this->getBeforeContent() ?>
+    <form action="" id="bricks-gifter" onsubmit="return false;">
+        <label for="bricks-gifter_recipient_name">
+            <?php echo $this->__('Name') ?>
+            <input type="text" id="bricks-gifter_recipient_name" name="bricks-gifter[recipient_name]" />
+        </label>
+        <label for="bricks-gifter_recipient_email">
+            <?php echo $this->__('Email Address') ?>
+            <input type="text" id="bricks-gifter_recipient_email" name="bricks-gifter[recipient_email]" />
+        </label>
+    </form>
+    <?php echo $this->getAfterContent() ?>
+</div>
+<script type="text/javascript">
+    Review.prototype.save = function () {
+        if (checkout.loadWaiting != false) {
+            return;
+        }
+        checkout.setLoadWaiting('review');
+        var params = Form.serialize(payment.form);
+        if (this.agreementsForm) {
+            params += '&' + Form.serialize(this.agreementsForm);
+        }
+
+        params += '&' + Form.serialize($('bricks-gifter'))
+
+        params.save = true;
+        var request = new Ajax.Request(
+            this.saveUrl,
+            {
+                method    :'post',
+                parameters:params,
+                onComplete:this.onComplete,
+                onSuccess :this.onSave,
+                onFailure :checkout.ajaxFailure.bind(checkout)
+            }
+        );
+    };
+</script>
+<?php 
+}
+?>
