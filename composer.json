@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Gifter",
+    "name": "OpenMageModuleFostering\/Gifter",
     "type": "magento-module",
     "license": "OSL-3.0",
     "homepage": "",
     "description": "Gifter",
     "authors": [
-    {
-        "name": "adam",
-        "email": "adam@bricksandmortarweb.com"
-    }
-],
+        {
+            "name": "adam",
+            "email": "adam@bricksandmortarweb.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
